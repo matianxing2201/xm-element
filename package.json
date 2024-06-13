@@ -2,7 +2,9 @@
   "name": "@xm-element/workspace",
   "version": "1.0.0",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "dev": "pnpm --filter @xm-element/play dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
