@@ -4,16 +4,20 @@
   "type": "module",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "description": "",
-  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
     "build": "vite build"
   },
   "peerDependencies": {
     "vue": "^3.4.19",
     "lodash-es": "^4.17.21"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
