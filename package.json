@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "pnpm --filter @xm-element/play dev",
     "docs:dev": "pnpm --filter @xm-element/docs dev",
-    "docs:build":  "pnpm --filter @xm-element/docs build"
+    "docs:build":  "pnpm --filter @xm-element/docs build",
+    "build-hooks":"cross-env NODE_ENV=production pnpm --filter @xm-element/hooks build"
   },
   "keywords": [],
   "author": "",
