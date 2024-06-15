@@ -44,7 +44,6 @@
     "@xm-element/hooks": "workspace:*",
     "@xm-element/theme": "workspace:*",
     "@xm-element/utils": "workspace:*",
-    "@vitepress-preview/component": "workspace:*",
     "@eric-ui/vite-plugins":"workspace:*",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
