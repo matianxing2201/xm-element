@@ -1,10 +1,17 @@
 {
   "name": "@xm-element/hooks",
   "version": "1.0.0",
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.27",
+    "lodash-es": "^4.17.21"
   },
   "keywords": [],
   "author": "",
