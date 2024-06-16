@@ -8,10 +8,11 @@ type Story = StoryObj<typeof XmButton> & { argTypes: ArgTypes }
 const meta: Meta<typeof XmButton> = {
     title: "Example/Button",
     component: XmButton,
+    tags: ["autodocs"],
     argTypes: {
         type: {
             control: { type: "select" },
-            options: ["primary", "success", "warning", "danger", "info", ""],
+            options: ["primary", "success", "warning", "danger", "info"],
         },
         size: {
             control: { type: "select" },

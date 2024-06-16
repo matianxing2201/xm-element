@@ -8,7 +8,8 @@
     "docs:dev": "pnpm --filter @xm-element/docs dev",
     "docs:build":  "pnpm --filter @xm-element/docs build",
     "test": "cross-env NODE_ENV=test pnpm --filter @xm-element/components test",
-    "build-hooks":"cross-env NODE_ENV=production pnpm --filter @xm-element/hooks build"
+    "build-hooks":"cross-env NODE_ENV=production pnpm --filter @xm-element/hooks build",
+    "build": "pnpm --filter xm-element build"
   },
   "keywords": [],
   "author": "",
