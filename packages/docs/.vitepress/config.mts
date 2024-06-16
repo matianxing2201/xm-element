@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Xm-element",
-  description: "高仿 ElementPlus 组件库",
+  description: "xiaoma的组件库",
   base: "/xm-element/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

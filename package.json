@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "pnpm --filter @xm-element/play dev",
+    "story": "pnpm --filter @xm-element/play storybook",
     "docs:dev": "pnpm --filter @xm-element/docs dev",
     "docs:build":  "pnpm --filter @xm-element/docs build",
     "test": "cross-env NODE_ENV=test pnpm --filter @xm-element/components test",
