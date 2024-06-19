@@ -26,6 +26,6 @@ const customStyles = computed(() => ({ color: props.color ?? void 0 }));
 
 </script>
 
-<style scoped>
+<style>
 @import './style.css';
 </style>
