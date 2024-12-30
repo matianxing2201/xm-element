@@ -1,0 +1,16 @@
+{
+  "name": "xm-element",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Components library by Vue3 + Ts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@xm-element/components": "workspace:*"
+  }
+}
