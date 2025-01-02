@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
   <div>
-    <xm-button />
+    <xm-button
+      type="primary"
+      size="small"
+    >button</xm-button>
   </div>
 </template>
 

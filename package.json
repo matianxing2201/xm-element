@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "pnpm -F @xm-element/play dev",
     "docs:dev": "pnpm -F @xm-element/docs dev",
-    "docs:build": "pnpm -F @xm-element/docs build"
+    "docs:build": "pnpm -F @xm-element/docs build",
+    "storybook": "pnpm -F @xm-element/play storybook dev"
   },
   "keywords": [],
   "author": "",
@@ -28,11 +29,14 @@
     "vue-tsc": "^1.8.27"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@xm-element/hooks": "workspace:*",
+    "@xm-element/theme": "workspace:*",
+    "@xm-element/utils": "workspace:*",
     "lodash-es": "^4.17.21",
     "vue": "^3.4.19",
-    "xm-element": "workspace:*",
-    "@xm-element/hooks": "workspace:*",
-    "@xm-element/utils": "workspace:*",
-    "@xm-element/theme": "workspace:*"
+    "xm-element": "workspace:*"
   }
 }

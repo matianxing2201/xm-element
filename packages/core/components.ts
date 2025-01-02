@@ -1,6 +1,7 @@
-import { XmButton } from '@xm-element/components'
+import { XmButton, XmIcon } from '@xm-element/components'
 import type { Plugin } from "vue";
 
 export default [
-    XmButton
+    XmButton,
+    XmIcon
 ] as Plugin[]
