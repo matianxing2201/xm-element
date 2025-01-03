@@ -12,7 +12,8 @@
 import type { IconProps } from './types.ts'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { omit } from 'lodash-es'
-import { computed } from 'vue'
+import { computed, useAttrs } from 'vue'
+
 defineOptions({
   name: 'XmIcon',
   inheritAttrs: false
@@ -20,11 +21,19 @@ defineOptions({
 
 
 
+const attrs = useAttrs()
+
+const style = attrs.style as Record<string, string | number> || {};
+
 const props = defineProps<IconProps>()
 // 去除 type 和 color 非fontawesome 图标属性
 const filterProps = computed(() => omit(props, ['type', 'color']))
-const customStyle = computed(() => ({ color: props.color ?? void 0}))
-
+const customStyle = computed(() => {
+  return {
+    ...{ color: props.color ?? void 0},
+    ...style
+  }
+})
 </script>
 
 

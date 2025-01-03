@@ -6,7 +6,9 @@
     <xm-button
       type="primary"
       size="small"
-    >button</xm-button>
+      icon="fa-address-book"
+    >
+      button</xm-button>
   </div>
 </template>
 

@@ -39,40 +39,47 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, computed } from "vue";
-  import type { ButtonProps, ButtonEmits, ButtonInstance } from './types.ts'
-  import { throttle } from 'lodash-es'
-  import XmIcon from '../Icon/Icon.vue'
+import { ref, computed, inject } from "vue";
+import type { ButtonProps, ButtonEmits, ButtonInstance } from './types.ts'
+import { throttle } from 'lodash-es'
+import XmIcon from '../Icon/Icon.vue'
+import { BUTTON_GROUP_CTX_KEY } from './contants.ts'
 
-  defineOptions({
-    name: 'XmButton'
-  })
+defineOptions({
+  name: 'XmButton'
+})
 
-  const props = withDefaults(defineProps<ButtonProps>(), {
-    tag: 'button',
-    nativeType: 'button',
-    useThrottle: true,
-    throttleDuration: 500
-  })
+const props = withDefaults(defineProps<ButtonProps>(), {
+  tag: 'button',
+  nativeType: 'button',
+  useThrottle: true,
+  throttleDuration: 500
+})
 
-  const emits = defineEmits<ButtonEmits>();
+const emits = defineEmits<ButtonEmits>();
 
-  const slots = defineSlots()
+const slots = defineSlots()
 
-  const _ref = ref<HTMLButtonElement>()
+const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0)
 
-  const iconStyle = computed(() => ({marginRight: slots.default ? '6px' : '0'}))
+const _ref = ref<HTMLButtonElement>()
 
-  // 防抖截流
-  const handleBtnClick = (e: MouseEvent) => {
-    emits('click', e)
-  }
+const iconStyle = computed(() => ({marginRight: slots.default ? '6px' : '0'}))
 
-  const handleClickThrottle = throttle(handleBtnClick, props.throttleDuration);
+// 处理buttonGroup 与 button 的size、type、disabled
+const size = computed(() => ctx?.size ?? props?.size ?? '')
+const type = computed(() => ctx?.type ?? props?.type ?? '')
+const disabled = computed(() => ctx?.disabled || props.disabled || false)
 
-  defineExpose<ButtonInstance>({
-    ref: _ref
-  })
+const handleBtnClick = (e: MouseEvent) => {
+  emits('click', e)
+}
+// 防抖截流
+const handleClickThrottle = throttle(handleBtnClick, props.throttleDuration);
+
+defineExpose<ButtonInstance>({
+  ref: _ref
+})
 </script>
 
 
