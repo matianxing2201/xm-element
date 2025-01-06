@@ -12,7 +12,5 @@ export const withInstall = <T>(component: T) => {
         const name = (component as any).name;
         app.component(name, component as Plugin)
     }
-    console.log(component)
-
     return component as SFCWithInstall<T>
 }
