@@ -5,5 +5,6 @@ import commponents from './components.ts'
 
 library.add(fas)
 const installer = makeInstaller(commponents)
-export * from '@xm-element/components'
+
+export * from '../components'
 export default installer
