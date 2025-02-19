@@ -7,4 +7,11 @@
             </xm-button>
         </xm-button-group>
     </p>
+    <p>
+        <xm-button-group type="warning" size="small">
+            <xm-button type="primary" icon="edit" round />
+            <xm-button type="primary" icon="share" />
+            <xm-button type="primary" icon="trash" round />
+        </xm-button-group>
+    </p>
 </template>
