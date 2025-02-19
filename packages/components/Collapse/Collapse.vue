@@ -25,6 +25,7 @@ if (props.arrordion && activeNames.value.length > 1) {
 // 点击子组件触发
 const handleItemClick = (item: CollapseItemName) => {
   let _activeNames = [...activeNames.value]; // 拷贝一份数据，避免直接修改原数据
+  
 
   // arrordion 模式下，只允许选中一个子组件 如果有值，则删除，没有值，则添加
   if(props.arrordion) {
@@ -44,7 +45,7 @@ const handleItemClick = (item: CollapseItemName) => {
 }
 
 // 更新子组件数据
-const updateActiveNames = (newNames: CollapseItemName) => {
+const updateActiveNames = (newNames: CollapseItemName[]) => {
   activeNames.value = newNames;
   emit('update:modelValue', newNames)
   emit('change', newNames)

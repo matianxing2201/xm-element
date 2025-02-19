@@ -21,7 +21,7 @@
       </span>
       <xm-icon icon="angle-right" class="header-angle" />
     </div>
-    <transition name="slide">
+    <transition name="slide" v-on="transitionEvents">
       <div class="xm-collapse-item__wapper" v-show="isActive">
         <div class="xm-collapse-item__content" :id="`item-content-${name}`">
           <slot></slot>
@@ -36,6 +36,7 @@ import type { CollapseItemProps } from './types.ts'
 import { inject, computed } from 'vue'
 import { COLLAPSE_CTX_KEY } from './constants.ts'
 import XmIcon from "../Icon/Icon.vue";
+import transitionEvents from './transitionEvents.ts'
 
 defineOptions({
   name: 'XmCollapseItem'
@@ -50,6 +51,8 @@ const handleClick = () => {
   if(props.disabled) return;
   ctx?.handleItemClick(props.name)
 }
+
+
 
 </script>
 
