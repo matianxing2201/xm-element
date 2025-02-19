@@ -55,9 +55,13 @@ const slots = defineSlots();
 
 const visible = ref(true);
 
-const iconName = computed(() => typeIconMap.get(props.type ?? "circle-info"));
+const iconName = computed(() => typeIconMap.get(props.type) ?? "circle-info");
 const withDescription = computed(() => props.description || slots.default);
 
+console.log(withDescription);
+
+
+// 关闭 Alert 时触发的事件抛出
 const close = () => {
     visible.value = false;
     emits("close");
