@@ -21,9 +21,9 @@ defineOptions({
 
 
 
-const attrs = useAttrs()
+const attrs = useAttrs() as Record<string, any>
 
-const style = attrs.style as Record<string, string | number> || {};
+const style = attrs.style  // as Record<string, string | number> || {};
 
 const props = defineProps<IconProps>()
 // 去除 type 和 color 非fontawesome 图标属性
