@@ -37,6 +37,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@popperjs/core": "^2.11.8",
     "@xm-element/hooks": "workspace:*",
     "@xm-element/theme": "workspace:*",
     "@xm-element/utils": "workspace:*",
