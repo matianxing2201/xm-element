@@ -5,7 +5,7 @@ export interface TooltipProps {
     trigger?: 'hover' | 'click' | 'contextmenu';
     placement?: Placement;
     manual?: boolean;
-    disable?: boolean;
+    disabled?: boolean;
     popperOptions?: Partial<Options>;
     transition?: string;
     showTimeout?: number;
@@ -13,8 +13,8 @@ export interface TooltipProps {
 }
 
 export interface TooltipEmits {
-    (e: 'visivle-change', value: boolean): void;
-    (e: 'click-outside'): void;
+    (e: "visible-change", value: boolean): void;
+    (e: "click-outside"): void;
 }
 
 export interface TooltipInstance {
