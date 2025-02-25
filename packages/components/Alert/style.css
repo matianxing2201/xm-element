@@ -25,6 +25,7 @@
     align-items: center;
     transition: opacity var(--xm-transition-duration);
     margin-top: var(--xm-alert-top-margin);
+
     .xm-alert__icon {
       color: var(--xm-alert-text-color);
       font-size: var(--xm-alert-icon-size);
