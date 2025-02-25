@@ -1,19 +1,15 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
   <div>
-    <xm-alert
-        closable
-        description="这是一段描述"
-        effect="light"
-        showIcon
-        type="success"
-        visible
+   <xm-tooltip
+      class="box-item"
+      content="Top Left prompts info"
+      placement="top-start"
     >
-        <template #title>标题</template>
-    </xm-alert>
+      <xm-button>top-start</xm-button>
+    </xm-tooltip>
   </div>
 </template>
 

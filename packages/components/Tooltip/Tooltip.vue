@@ -38,7 +38,7 @@ defineOptions({
 });
 
 
-
+// 设置默认值
 const props = withDefaults(defineProps<TooltipProps>(), {
   placement: "bottom",
   trigger: "hover",
@@ -49,18 +49,24 @@ const props = withDefaults(defineProps<TooltipProps>(), {
 const emits = defineEmits<TooltipEmits>();
 const visible = ref(false);
 
+// 定义事件监听器对象
 const events: Ref<Record<string, EventListener>> = ref({});
 const outerEvents: Ref<Record<string, EventListener>> = ref({});
 const dropdownEvents: Ref<Record<string, EventListener>> = ref({});
 
+// 定义 DOM 引用
 const containerNode = ref<HTMLElement>();
 const popperNode = ref<HTMLElement>();
 const _triggerNode = ref<HTMLElement>();
 
+
+// 返回触发节点
 const triggerNode = computed(() => {
   return _triggerNode.value as HTMLElement;
 });
 
+
+// 返回 popper 的配置选项
 const popperOptions = computed(() => ({
   placement: props.placement,
   modifiers: [
@@ -74,14 +80,17 @@ const popperOptions = computed(() => ({
   ...props.popperOptions,
 }));
 
+// 打开延迟时间
 const openDelay = computed(() =>
   props.trigger === "hover" ? props.showTimeout : 0
 );
 
+// 关闭延迟时间
 const closeDelay = computed(() =>
   props.trigger === "hover" ? props.hideTimeout : 0
 );
 
+// 定义触发策略映射
 const triggerStrategyMap: Map<string, () => void> = new Map();
 triggerStrategyMap.set("hover", () => {
   events.value["mouseenter"] = openFinal;
@@ -98,19 +107,23 @@ triggerStrategyMap.set("contextmenu", () => {
   };
 });
 
+// 定义防抖函数
 let openDebounce: DebouncedFunc<() => void> | void;
 let closeDebounce: DebouncedFunc<() => void> | void;
 
+// 打开最终函数
 function openFinal() {
   closeDebounce?.cancel();
   openDebounce?.();
 }
 
+// 关闭最终函数
 function closeFinal() {
   openDebounce?.cancel();
   closeDebounce?.();
 }
 
+// 切换 popper 显示状态
 function togglePopper() {
   visible.value ? closeFinal() : openFinal();
 }
@@ -120,7 +133,7 @@ function setVisible(val: boolean) {
   visible.value = val;
   emits("visible-change", val);
 }
-
+// 事件监听器
 function attachEvents() {
   if (props.disabled || props.manual) return;
   triggerStrategyMap.get(props.trigger)?.();
@@ -176,6 +189,7 @@ watch(
 watch(
   () => props.manual,
   (isManual) => {
+    console.log(isManual);
     if (isManual) {
       events.value = {};
       outerEvents.value = {};
