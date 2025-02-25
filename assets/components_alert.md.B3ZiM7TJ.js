@@ -1,1 +1,0 @@
-import{_ as e,c as t,o as a}from"./chunks/framework.DrM6JVSf.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/alert.md","filePath":"components/alert.md"}'),o={name:"components/alert.md"};function r(n,s,c,p,m,l){return a(),t("div")}const i=e(o,[["render",r]]);export{d as __pageData,i as default};
