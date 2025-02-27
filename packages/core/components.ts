@@ -1,4 +1,13 @@
-import { XmButton, XmButtonGroup, XmIcon, XmCollapse, XmCollapseItem, XmAlert, XmTooltip } from '@xm-element/components'
+import { 
+    XmButton, 
+    XmButtonGroup,
+    XmIcon, 
+    XmCollapse,
+    XmCollapseItem,
+    XmAlert, 
+    XmTooltip, 
+    XmPopconfirm 
+} from '@xm-element/components'
 import type { Plugin } from "vue";
 
 export default [
@@ -8,5 +17,6 @@ export default [
     XmCollapse,
     XmCollapseItem,
     XmAlert,
-    XmTooltip
+    XmTooltip,
+    XmPopconfirm
 ] as Plugin[]

@@ -1,6 +1,11 @@
 ---
 title: Tooltip
 description: Tooltip 组件文档
+
+next:
+    link: /components/popconfirm
+    text: Popconfirm 气泡确认框
+
 ---
 
 # Tooltip 文字提示

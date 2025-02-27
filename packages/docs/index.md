@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "Xm-Element"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: "小马的组件库"
+  tagline: 基于 VitePress 搭建
   actions:
     - theme: brand
       text: 开始使用

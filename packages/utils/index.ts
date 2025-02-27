@@ -7,3 +7,4 @@ export const typeIconMap = new Map([
 ])
 
 export * from './install.ts'
+export * from './style.ts'
