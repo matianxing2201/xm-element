@@ -1,0 +1,1 @@
+import{_ as e,c as t,o}from"./chunks/framework.CD1MNGGl.js";const d=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"components/collapse.md","filePath":"components/collapse.md"}'),a={name:"components/collapse.md"};function s(c,n,p,r,l,m){return o(),t("div")}const i=e(a,[["render",s]]);export{d as __pageData,i as default};
