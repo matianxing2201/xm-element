@@ -6,7 +6,9 @@ import {
     XmCollapseItem,
     XmAlert, 
     XmTooltip, 
-    XmPopconfirm 
+    XmPopconfirm,
+    XmDropdown,
+    XmDropdownItem,
 } from '@xm-element/components'
 import type { Plugin } from "vue";
 
@@ -18,5 +20,7 @@ export default [
     XmCollapseItem,
     XmAlert,
     XmTooltip,
-    XmPopconfirm
+    XmPopconfirm,
+    XmDropdown,
+    XmDropdownItem
 ] as Plugin[]
