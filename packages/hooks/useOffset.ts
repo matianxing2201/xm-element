@@ -18,8 +18,9 @@ export function useOffset(opts: useOffsetOptions): useOffsetResult {
   // 本元素应该的 top
   const topOffset = computed(() => opts.offset + lastBottomOffset.value);
   // 为下一个实例预留的底部 offset
+  
   const bottomOffset = computed(() => topOffset.value + opts.boxHeight.value);
-
+  
   return {
     topOffset,
     bottomOffset,

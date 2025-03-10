@@ -2,8 +2,6 @@
 title: Popconfirm
 description: Popconfirm 组件文档
 
-
-
 prev:
     link: /components/tooltip
     text: 快速开始

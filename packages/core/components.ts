@@ -9,6 +9,7 @@ import {
     XmPopconfirm,
     XmDropdown,
     XmDropdownItem,
+    XmMessage
 } from '@xm-element/components'
 import type { Plugin } from "vue";
 
@@ -22,5 +23,6 @@ export default [
     XmTooltip,
     XmPopconfirm,
     XmDropdown,
-    XmDropdownItem
+    XmDropdownItem,
+    XmMessage
 ] as Plugin[]
