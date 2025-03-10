@@ -5,7 +5,7 @@ const activeNames = ref(['1'])
 </script>
 
 <template>
-  <xm-collapse v-model="activeNames" accordion>
+  <xm-collapse v-model="activeNames" arrordion>
     <xm-collapse-item title="Consistency" name="1">
       <div>
         Consistent with real life: in line with the process and logic of real
