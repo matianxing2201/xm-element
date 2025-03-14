@@ -1,0 +1,231 @@
+.xm-input {
+  --xm-input-text-color: var(--xm-text-color-regular);
+  --xm-input-border: var(--xm-border);
+  --xm-input-hover-border: var(--xm-border-color-hover);
+  --xm-input-focus-border: var(--xm-color-primary);
+  --xm-input-transparent-border: 0 0 0 1px transparent inset;
+  --xm-input-border-color: var(--xm-border-color);
+  --xm-input-border-radius: var(--xm-border-radius-base);
+  --xm-input-bg-color: var(--xm-fill-color-blank);
+  --xm-input-icon-color: var(--xm-text-color-placeholder);
+  --xm-input-placeholder-color: var(--xm-text-color-placeholder);
+  --xm-input-hover-border-color: var(--xm-border-color-hover);
+  --xm-input-clear-hover-color: var(--xm-text-color-secondary);
+  --xm-input-focus-border-color: var(--xm-color-primary);
+}
+
+.xm-input {
+  --xm-input-height: var(--xm-component-size);
+  position: relative;
+  font-size: var(--xm-font-size-base);
+  display: inline-flex;
+  width: 100%;
+  line-height: var(--xm-input-height);
+  box-sizing: border-box;
+  vertical-align: middle;
+  &.is-disabled {
+    cursor: not-allowed;
+    .xm-input__wrapper {
+      background-color: var(--xm-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--xm-disabled-border-color) inset;
+    }
+    .xm-input__inner {
+      color: var(--xm-disabled-text-color);
+      -webkit-text-fill-color: var(--xm-disabled-text-color);
+      cursor: not-allowed;
+    }
+    .xm-textarea__inner {
+      background-color: var(--xm-disabled-bg-color);
+      box-shadow: 0 0 0 1px var(--xm-disabled-border-color) inset;
+      color: var(--xm-disabled-text-color);
+      -webkit-text-fill-color: var(--xm-disabled-text-color);
+      cursor: not-allowed;
+    }
+  }
+  &.is-prepend {
+    > .xm-input__wrapper {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.is-append {
+    > .xm-input__wrapper {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  &.is-focus .xm-input__wrapper {
+    box-shadow: 0 0 0 1px var(--xm-input-focus-border-color) inset !important;
+  }
+}
+
+.xm-input--large {
+  --xm-input-height: var(--xm-component-size-large);
+  font-size: 14px;
+  .xm-input__wrapper {
+    padding: 1px 15px;
+    .xm-input__inner {
+      --xm-input-inner-height: calc(var(--xm-input-height, 40px) - 2px);
+    }
+  }
+}
+.xm-input--small {
+  --xm-input-height: var(--xm-component-size-small);
+  font-size: 12px;
+  .xm-input__wrapper {
+    padding: 1px 7px;
+    .xm-input__inner {
+      --xm-input-inner-height: calc(var(--xm-input-height, 24px) - 2px);
+    }
+  }
+}
+.xm-input__prefix,
+.xm-input__suffix {
+  display: inline-flex;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  text-align: center;
+  color: var(--xm-input-icon-color, var(--xm-text-color-placeholder));
+  transition: all var(--xm-transition-duration);
+}
+.xm-input__prefix {
+  > :first-child {
+    margin-left: 0px !important;
+  }
+  > :last-child {
+    margin-right: 8px !important;
+  }
+}
+.xm-input__suffix {
+  > :first-child {
+    margin-left: 8px !important;
+  }
+  > :last-child {
+    margin-right: 0px !important;
+  }
+}
+.xm-input__prepend,
+.xm-input__append {
+  background-color: var(--xm-fill-color-light);
+  color: var(--xm-color-info);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  border-radius: var(--xm-input-border-radius);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.xm-input__prepend {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 1px 0 0 0 var(--xm-input-border-color) inset,
+    0 1px 0 0 var(--xm-input-border-color) inset,
+    0 -1px 0 0 var(--xm-input-border-color) inset;
+}
+.xm-input__append {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow: 0 1px 0 0 var(--xm-input-border-color) inset,
+    0 -1px 0 0 var(--xm-input-border-color) inset,
+    -1px 0 0 0 var(--xm-input-border-color) inset;
+  & > .xm-input__wrapper {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.xm-input--textarea {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: bottom;
+  font-size: var(--xm-font-size-base);
+}
+.xm-textarea__wrapper {
+  position: relative;
+  display: block;
+  resize: vertical;
+  padding: 5px 11px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--xm-input-text-color, var(--xm-text-color-regular));
+  background-color: var(--xm-input-bg-color, var(--xm-fill-color-blank));
+  background-image: none;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 1px var(--xm-input-border-color, var(--xm-border-color))
+    inset;
+  border-radius: var(--xm-input-border-radius, var(--xm-border-radius-base));
+  transition: var(--xm-transition-box-shadow);
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px var(--xm-input-focus-border-color) inset;
+  }
+  &::placeholder {
+    color: var(--xm-input-placeholder-color);
+  }
+}
+.xm-input__wrapper {
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 11px;
+  background-color: var(--xm-input-bg-color, var(--xm-fill-color-blank));
+  background-image: none;
+  border-radius: var(--xm-input-border-radius, var(--xm-border-radius-base));
+  transition: var(--xm-transition-box-shadow);
+  box-shadow: 0 0 0 1px var(--xm-input-border-color, var(--xm-border-color))
+    inset;
+  &:hover {
+    box-shadow: 0 0 0 1px var(--xm-input-hover-border-color) inset;
+  }
+  &.is-focus {
+    box-shadow: 0 0 0 1px var(--xm-input-focus-border-color) inset;
+  }
+  .xm-input__inner {
+    --xm-input-inner-height: calc(var(--xm-input-height, 32px) - 2px);
+    width: 100%;
+    flex-grow: 1;
+    -webkit-appearance: none;
+    color: var(--xm-input-text-color, var(--xm-text-color-regular));
+    font-size: inherit;
+    height: var(--xm-input-inner-height);
+    line-height: var(--xm-input-inner-height);
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    box-sizing: border-box;
+    &::placeholder {
+      color: var(--xm-input-placeholder-color);
+    }
+  }
+  .xm-icon {
+    height: inherit;
+    line-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--xm-transition-duration);
+    margin-left: 8px;
+  }
+  .xm-input__clear,
+  .xm-input__password {
+    color: var(--xm-input-icon-color);
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+      color: var(--xm-input-clear-hover-color);
+    }
+  }
+}

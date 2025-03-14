@@ -37,6 +37,7 @@ import { getLastBottomOffset } from './methods';
 import { bind, delay } from "lodash-es";
 import { useOffset, useEventListener } from "@xm-element/hooks"
 import { RenderVnode, typeIconMap } from '@xm-element/utils';
+import XmIcon from '../Icon/Icon.vue'
 
 defineOptions({
     name: "XmMessage"

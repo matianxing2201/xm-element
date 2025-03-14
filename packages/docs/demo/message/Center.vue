@@ -5,7 +5,7 @@ const openCenter = () => {
     XmMessage({
         showClose: true,
         message: "Centered text",
-        center: true
+        center: true,
     });
 };
 </script>
